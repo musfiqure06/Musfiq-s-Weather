@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musfiq's Weather|Futuristic Bangladesh Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="particles-container" id="particles"></div>
+        <div class="weather-animation" id="weather-animation"></div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <h1 class="logo-text">Musfiq's <span class="logo-highlight">WEATHER</span></h1>
+            </div>
+            <div class="header-controls">
+                <div class="unit-toggle">
+                    <button class="unit-btn active" data-unit="celsius">°C</button>
+                    <button class="unit-btn" data-unit="fahrenheit">°F</button>
+                </div>
+                <button class="refresh-btn" id="refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Refresh</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="location-search" placeholder="Search district, upazila or village..." autocomplete="off">
+                        <div class="search-dropdown" id="search-dropdown"></div>
+                    </div>
+                    <div class="search-info">
+                        <p><i class="fas fa-info-circle"></i> Search any location in Bangladesh</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Current Weather Card -->
+            <section class="current-weather-section">
+                <div class="weather-card glass-card main-weather">
+                    <div class="weather-card-header">
+                        <h2><i class="fas fa-map-marker-alt"></i> <span id="current-location">Dhaka</span></h2>
+                        <div class="time-display" id="current-time">--:-- --</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="temp-display">
+                            <div class="temp-value" id="current-temp">--</div>
+                            <div class="temp-unit">°C</div>
+                        </div>
+                        <div class="weather-condition">
+                            <div class="condition-icon" id="weather-icon">
+                                <i class="fas fa-question"></i>
+                            </div>
+                            <div class="condition-text" id="condition-text">--</div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div class="detail-info">
+                                    <div class="detail-value" id="wind-speed">--</div>
+                                    <div class="detail-label">Wind Speed</div>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div class="detail-info">
+                                    <div class="detail-value" id="humidity">--</div>
+                                    <div class="detail-label">Humidity</div>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-temperature-high"></i>
+                                </div>
+                                <div class="detail-info">
+                                    <div class="detail-value" id="feels-like">--</div>
+                                    <div class="detail-label">Feels Like</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weather-card-footer">
+                        <div class="last-update">
+                            <i class="fas fa-clock"></i>
+                            <span>Last updated: <span id="last-update">--</span></span>
+                        </div>
+                        <div class="auto-update">
+                            <i class="fas fa-robot"></i>
+                            <span>Auto-update: <span class="highlight-text">ON</span> (5 min)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Forecast & Popular Locations -->
+            <section class="additional-info-section">
+                <!-- Popular Locations -->
+                <div class="info-card glass-card">
+                    <div class="info-card-header">
+                        <h3><i class="fas fa-fire"></i> Popular Locations</h3>
+                    </div>
+                    <div class="popular-locations" id="popular-locations">
+                        <!-- Popular locations will be populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Forecast -->
+                <div class="info-card glass-card">
+                    <div class="info-card-header">
+                        <h3><i class="fas fa-chart-line"></i> 7-Day Forecast</h3>
+                    </div>
+                    <div class="forecast-container" id="forecast-container">
+                        <!-- Forecast will be populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Weather Map -->
+                <div class="info-card glass-card map-card">
+                    <div class="info-card-header">
+                        <h3><i class="fas fa-globe-asia"></i> Bangladesh Weather Map</h3>
+                    </div>
+                    <div class="map-placeholder">
+                        <div class="map-grid">
+                            <!-- Map will be simulated with CSS -->
+                            <div class="map-region" style="--temp: 32" data-region="Dhaka">Dhaka</div>
+                            <div class="map-region" style="--temp: 28" data-region="Chittagong">CTG</div>
+                            <div class="map-region" style="--temp: 31" data-region="Rajshahi">RJ</div>
+                            <div class="map-region" style="--temp: 30" data-region="Khulna">KHL</div>
+                            <div class="map-region" style="--temp: 29" data-region="Sylhet">SYL</div>
+                            <div class="map-region" style="--temp: 27" data-region="Barisal">BAR</div>
+                            <div class="map-region" style="--temp: 33" data-region="Rangpur">RPR</div>
+                            <div class="map-region" style="--temp: 26" data-region="Mymensingh">MYM</div>
+                        </div>
+                        <div class="map-legend">
+                            <div class="legend-item cool">Cool</div>
+                            <div class="legend-item mild">Mild</div>
+                            <div class="legend-item warm">Warm</div>
+                            <div class="legend-item hot">Hot</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-satellite"></i> Data Source</h4>
+                    <p>Weather data provided by Open-Meteo API</p>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-bolt"></i> Features</h4>
+                    <p>Real-time updates • 7-day forecast • All Bangladesh locations</p>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-code"></i> Built With</h4>
+                    <p>HTML5 • CSS3 • Vanilla JavaScript • Futuristic Design</p>
+                </div>
+            </div>
+            <section class="credits">
+                <h2>About Me</h2>
+                <p><strong>Hi!  I’m Musfiqure</strong>— the designer, developer, and founder of this website.</p>
+                <p>I built and designed everything you see here, from the layout and animations to the features and functionality.</p>
+            </section>
+            <!-- Floating WhatsApp Button -->
+            <a href="https://wa.me/8801778375642" target="_blank" class="floating-whatsapp">
+                <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp Icon" />
+            </a>
+
+
+
+            <div class="footer-copyright">
+                <p>© 2025 <span class="highlight-text">Musfiq's WEATHER</span> | A Futuristic Weather Interface</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+            </div>
+            <div class="loading-text">SYNCING WEATHER DATA...</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/bangladesh-locations.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

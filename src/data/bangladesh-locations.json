@@ -1,0 +1,120 @@
+[{
+        "district": "Dhaka",
+        "thana": "Dhanmondi",
+        "gram": "Dhanmondi 1",
+        "lat": 23.7465,
+        "lon": 90.3760
+    },
+    {
+        "district": "Dhaka",
+        "thana": "Dhanmondi",
+        "gram": "Dhanmondi 2",
+        "lat": 23.7434,
+        "lon": 90.3804
+    },
+    {
+        "district": "Dhaka",
+        "thana": "Gulshan",
+        "gram": "Gulshan 1",
+        "lat": 23.7915,
+        "lon": 90.4148
+    },
+    {
+        "district": "Dhaka",
+        "thana": "Gulshan",
+        "gram": "Gulshan 2",
+        "lat": 23.7979,
+        "lon": 90.4230
+    },
+    {
+        "district": "Dhaka",
+        "thana": "Uttara",
+        "gram": "Uttara Sector 1",
+        "lat": 23.8759,
+        "lon": 90.3795
+    },
+    {
+        "district": "Dhaka",
+        "thana": "Uttara",
+        "gram": "Uttara Sector 2",
+        "lat": 23.8720,
+        "lon": 90.3830
+    },
+    {
+        "district": "Chittagong",
+        "thana": "Kotwali",
+        "gram": "Agrabad",
+        "lat": 22.3265,
+        "lon": 91.7996
+    },
+    {
+        "district": "Chittagong",
+        "thana": "Kotwali",
+        "gram": "GEC Circle",
+        "lat": 22.3465,
+        "lon": 91.8196
+    },
+    {
+        "district": "Rajshahi",
+        "thana": "Rajpara",
+        "gram": "Shibganj",
+        "lat": 24.3636,
+        "lon": 88.6241
+    },
+    {
+        "district": "Khulna",
+        "thana": "Khulna Sadar",
+        "gram": "Sonadanga",
+        "lat": 22.8456,
+        "lon": 89.5403
+    },
+    {
+        "district": "Sylhet",
+        "thana": "Sylhet Sadar",
+        "gram": "Zindabazar",
+        "lat": 24.8918,
+        "lon": 91.8719
+    },
+    {
+        "district": "Barisal",
+        "thana": "Barisal Sadar",
+        "gram": "Nattullabad",
+        "lat": 22.7029,
+        "lon": 90.3695
+    },
+    {
+        "district": "Rangpur",
+        "thana": "Rangpur Sadar",
+        "gram": "Goran",
+        "lat": 25.7439,
+        "lon": 89.2752
+    },
+    {
+        "district": "Mymensingh",
+        "thana": "Mymensingh Sadar",
+        "gram": "Chorpara",
+        "lat": 24.7471,
+        "lon": 90.4203
+    },
+    {
+        "district": "Comilla",
+        "thana": "Comilla Sadar",
+        "gram": "Kandirpar",
+        "lat": 23.4613,
+        "lon": 91.1859
+    },
+    {
+        "district": "Narayanganj",
+        "thana": "Fatullah",
+        "gram": "Fatullah",
+        "lat": 23.6460,
+        "lon": 90.5033
+    },
+    {
+        "district": "Gazipur",
+        "thana": "Gazipur Sadar",
+        "gram": "Joydebpur",
+        "lat": 23.9988,
+        "lon": 90.4201
+    }
+]
